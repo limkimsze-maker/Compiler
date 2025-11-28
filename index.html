@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SLS HTML Helper – Chatbot & ZIP Factory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #0050b3;
+      color: #fff;
+      padding: 16px 24px;
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 22px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 16px auto 32px;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 16px 18px 18px;
+      box-sizing: border-box;
+    }
+
+    .card h2 {
+      margin: 0 0 4px;
+      font-size: 18px;
+    }
+
+    .card h3 {
+      margin: 12px 0 6px;
+      font-size: 15px;
+    }
+
+    .card p {
+      margin: 4px 0 8px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .tagline {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .embed-wrapper {
+      margin-top: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #dde3f0;
+      background: #fdfdff;
+      padding: 16px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .embed-wrapper iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+      display: block;
+    }
+
+    .hint {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: #e6f4ff;
+      color: #0050b3;
+      margin-right: 6px;
+    }
+
+    ol.steps {
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    ol.steps li {
+      margin: 4px 0;
+    }
+
+    .note-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #fff7e6;
+      border: 1px solid #ffd591;
+      font-size: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f0f5ff;
+      color: #1d39c4;
+      margin-bottom: 6px;
+    }
+
+    .chat-button {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #0050b3;
+      color: #fff;
+      font-size: 13px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .chat-button:hover {
+      opacity: 0.92;
+    }
+
+    .chat-note {
+      font-size: 11px;
+      color: #666;
+      margin-top: 8px;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #777;
+      padding: 8px 16px 16px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SLS HTML Helper</h1>
+    <p>
+      Chat with the authoring assistants, create SLS-ready ZIP files, and follow
+      the step-by-step guide to upload them into Student Learning Space (SLS).
+    </p>
+  </header>
+
+  <main>
+    <div class="layout">
+      <!-- LEFT: Chatbots -->
+      <section class="card">
+        <div class="pill">Step 1 · Plan & generate code</div>
+        <h2>Your HTML Authoring Chatbots</h2>
+        <p class="tagline">
+          Use these chatbots to generate or refine your HTML5 interactives, including xAPI and SLS settings.
+          One focuses on <strong>Practice + Test (Mode A)</strong> and the other on <strong>Test-only (Mode B)</strong>.
+        </p>
+
+        <!-- Chatbot A: Practice + Test (Mode A) -->
+        <div class="embed-wrapper">
+          <h3 style="margin-top:0;font-size:14px;">Chatbot A – Practice + Test (Mode A)</h3>
+          <p style="font-size:13px; margin-bottom:10px;">
+            Click the button below to open your <strong>Mode A</strong> authoring assistant in a new browser tab.
+          </p>
+          <a
+            class="chat-button"
+            href="https://chatgpt.com/g/g-6929118dfdf08191b69fa97b3a258120-practice-and-test-builder-lim-kim-sze"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            💬 Open Mode A – Practice + Test Chatbot
+          </a>
+          <div class="chat-note">
+            • Use this when you want activities with both <strong>Practice</strong> and <strong>Test</strong> sections (Mode A).<br />
+            • Example prompt: <em>“Mode A: Create a P2 Practice + Test activity on comparing unit fractions…”</em><br />
+            • chatgpt.com does not allow embedding inside other websites, so it opens in a new tab.
+          </div>
+        </div>
+
+        <!-- Chatbot B: Test-only (Mode B) -->
+        <div class="embed-wrapper" style="margin-top:12px;">
+          <h3 style="margin-top:0;font-size:14px;">Chatbot B – Test-only (Mode B)</h3>
+          <p style="font-size:13px; margin-bottom:10px;">
+            Click the button below to open your <strong>Mode B</strong> authoring assistant in a new browser tab.
+          </p>
+          <a
+            class="chat-button"
+            href="https://chatgpt.com/g/g-692916ba6a64819183c42df9bf36a278-test-builder-lim-kim-sze"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🧪 Open Mode B – Test-only Chatbot
+          </a>
+          <div class="chat-note">
+            • Use this when you want <strong>Test-only</strong> activities (Mode B), e.g. FIB or MCQ tests only.<br />
+            • Example prompt: <em>“Mode B: Create a P3 Test-only activity on area and perimeter word problems…”</em><br />
+          </div>
+        </div>
+
+        <p class="hint">
+          🔧 <strong>To customise further:</strong> If you build your own web-based chatbots using the OpenAI API,
+          you can host them on your own domain and embed them here with an <code>&lt;iframe&gt;</code> instead of buttons.
+        </p>
+      </section>
+
+      <!-- RIGHT: ZIP Factory -->
+      <section class="card">
+        <div class="pill">Step 2 · Build SLS-ready ZIP</div>
+        <h2>SLS One-Click ZIP Factory</h2>
+        <p class="tagline">
+          Use your working ZIP Factory tool here to package <code>index.html</code>, <code>index.js</code>
+          and <code>xapiwrapper.min.js</code> into an SLS-compatible HTML5 package.
+        </p>
+
+        <div class="embed-wrapper">
+          <iframe
+            src="https://limkimsze-maker.github.io/zip_factory/"
+            title="SLS One-Click ZIP Factory (replace with your ZIP Factory file name if different)">
+          </iframe>
+        </div>
+
+        <p class="hint">
+          📦 <strong>To customise:</strong> If your ZIP Factory file has a different name (e.g.
+          <code>factory.html</code>), change the iframe <code>src</code> to match.
+        </p>
+      </section>
+    </div>
+
+    <!-- Instructions card -->
+    <section class="card" style="margin-top:16px;">
+      <span class="badge">Step 3 · Upload ZIP to SLS</span>
+      <h2>How to Upload Your HTML5 ZIP into SLS</h2>
+
+      <h3>A. Before you upload</h3>
+      <ol class="steps">
+        <li>
+          Make sure your main file is named <code>index.html</code> and it sits at the
+          <strong>root</strong> of the ZIP (not inside another folder).
+        </li>
+        <li>
+          Put all supporting files (e.g. <code>index.js</code>, <code>xapiwrapper.min.js</code>,
+          images, sounds) in the same folder structure that <code>index.html</code> expects.
+        </li>
+        <li>
+          When zipping manually, <strong>select the files</strong> (e.g. <code>index.html</code> and any folders)
+          and compress them together — <em>do not zip the outer folder itself</em>.
+        </li>
+        <li>
+          Ensure the ZIP size is within SLS limits (your school / MOE guidelines, typically a few hundred MB).
+        </li>
+      </ol>
+
+      <h3>B. Uploading the ZIP into a SLS lesson (Teacher view)</h3>
+      <ol class="steps">
+        <li>Log in to <strong>Student Learning Space (SLS)</strong> in Teacher mode.</li>
+        <li>Open or create the <strong>Lesson</strong> where you want the interactive to appear.</li>
+        <li>Enter the <strong>Module Editor</strong> for the activity / slide.</li>
+        <li>
+          In the component bar, add a new question:
+          <ul style="margin:4px 0 0 0; padding-left:16px; font-size:13px;">
+            <li>Click <strong>Question</strong>.</li>
+            <li>Select <strong>Free-Response</strong> → <strong>Interactive Response</strong>.</li>
+          </ul>
+        </li>
+        <li>
+          In the Interactive Response settings, look for the option to
+          <strong>Upload HTML5 Package / ZIP</strong>, then click <strong>Upload</strong>.
+        </li>
+        <li>
+          Browse to your ZIP file (generated by your ZIP Factory) and select it.
+          Wait for the upload and virus scan to complete.
+        </li>
+        <li>
+          Once uploaded, SLS should show a playable preview (not just a download link).
+          If you see only a download link, re-check that <code>index.html</code> is at the
+          root of the ZIP and that there isn’t an extra top-level folder.
+        </li>
+        <li>
+          Switch to <strong>Student View</strong> and test the interactive:
+          answer the questions and confirm that score/feedback are recorded correctly in SLS.
+        </li>
+      </ol>
+
+      <div class="note-box">
+        <strong>Quick Checklist (for SLS-friendly ZIP):</strong><br />
+        ▸ <code>index.html</code> at the root of the ZIP<br />
+        ▸ No extra wrapping folder inside the ZIP<br />
+        ▸ All JS/CSS/media files in expected locations<br />
+        ▸ ZIP size within SLS / school limits<br />
+        ▸ Preview shows an embedded interactive, not just a download link
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    SLS Helper Page – combine chatbots, ZIP factory and upload guide in one place.<br />
+    <strong>Designed by Lim Kim Sze © 2025</strong>
+  </footer>
+</body>
+</html>
