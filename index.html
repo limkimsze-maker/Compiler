@@ -309,9 +309,27 @@
   <footer>
     SLS Helper Page – combine chatbots, ZIP factory and upload guide in one place.<br />
     <strong>Designed by Lim Kim Sze © 2025</strong>
+  👀 Page Views:
+  <span id="view-count">...</span>
   </footer>
+  <script>
+  fetch('https://api.countapi.xyz/hit/limkimsze-maker/counter')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var span = document.getElementById('view-count');
+      if (span) {
+        span.textContent = data.value;
+      }
+    })
+    .catch(function (err) {
+      console.error('Counter error:', err);
+    });
+  </script>
 </body>
 </html>
+
 
 
 
